@@ -59,7 +59,7 @@ for i in $(seq 1 "${clients_count}");
 do
     client_private_key=$(wg genkey)
     client_public_key=$(echo "${client_private_key}" | wg pubkey)
-    client_ip=10.0.0.$((i+1))/32
+    client_ip=10.0.1.$((i+1))/32
     client_config=client$i.conf
     echo -e "\t$(pwd)/${client_config}"
   	cat > "${client_config}" <<EOL
